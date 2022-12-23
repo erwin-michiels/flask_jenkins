@@ -11,7 +11,7 @@ echo "COPY ./static /home/webapp/static/" >> deployment/Dockerfile
 echo "COPY ./templates /home/webapp/templates/" >> deployment/Dockerfile
 echo "COPY web_app.py /home/webapp/" >> deployment/Dockerfile
 echo "EXPOSE 8899" >> deployment/Dockerfile
-echo "CMD python3 /home/webapp/deploy_web_app.py" >> deployment/Dockerfile
+echo "CMD python3 /home/webapp/web_app.py" >> deployment/Dockerfile
 cd deployment
 docker build -t web_app_image .
 docker run -t -d -p 8899:8899 --name web_app_container web_app_image
